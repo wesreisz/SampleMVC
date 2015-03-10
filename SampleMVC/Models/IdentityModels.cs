@@ -29,5 +29,7 @@ namespace SampleMVC.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<SampleMVC.Models.Student> Students { get; set; }
     }
 }
