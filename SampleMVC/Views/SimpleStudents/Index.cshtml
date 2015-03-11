@@ -1,0 +1,22 @@
+﻿@model IEnumerable<SampleMVC.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <h2>Students</h2>
+    @Html.ActionLink("Create a New Student", "Create")
+    @foreach (var student in Model)
+    {
+        <div class="row">
+            <div class="col-sm-3">@Html.DisplayFor(modelItem => student.Email)</div>
+            <div class="col-sm-3">@Html.DisplayFor(modelItem => student.Name)</div>
+            <div class="col-sm-3">@Html.DisplayFor(modelItem => student.City)</div>
+            <div class="col-sm-1">@Html.DisplayFor(modelItem => student.Age)</div>
+            <div class="col-sm-1">@Html.ActionLink("Edit", "Edit", new { id = student.StudentID })</div>
+            <div class="col-sm-1">@Html.ActionLink("Del", "Delete", new { id = student.StudentID })</div>
+            </div>
+    }
+</div>
+

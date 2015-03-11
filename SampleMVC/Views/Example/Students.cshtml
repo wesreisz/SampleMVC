@@ -1,0 +1,19 @@
+﻿@model SampleMVC.Models.ExampleViewModel
+
+@{
+    ViewBag.Title = "Students";
+}
+
+<div class="container">
+    <h2>Students</h2>
+
+    @foreach (var student in Model.Students)
+    {
+        <div class="row">
+            <div class="col-sm-3">@Html.DisplayFor(modelItem => student.Name)</div>
+            <div class="col-sm-3">@Html.DisplayFor(modelItem => student.Email)</div>
+            <div class="col-sm-3">@Html.DisplayFor(modelItem => student.City)</div>
+            <div class="col-sm-3">@Html.DisplayFor(modelItem => student.Age)</div>
+        </div>
+    }
+</div>

@@ -1,0 +1,39 @@
+﻿@model SampleMVC.Models.ExampleViewModel
+
+//doco
+//http://www.w3schools.com/aspnet/mvc_htmlhelpers.asp
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@Html.LabelFor(m => m.String, new { })
+@Html.TextBoxFor(m => m.String, new { @class = "form-control" })
+
+@Html.LabelFor(m => m.Bool, new { })
+@Html.TextBoxFor(m => m.Bool, new { @class = "form-control"})
+
+@Html.LabelFor(m => m.Decimal, new { })
+@Html.TextBoxFor(m => m.Decimal, new { @class = "form-control" })
+
+@Html.LabelFor(m => m.DateTime, new { })
+<span style="display:block;">
+    @Html.DisplayTextFor(m => m.DateTime)
+</span>
+
+<!-- display lists-->
+@Html.LabelFor(m => m.Names, new { })
+@Html.ListBoxFor(m => m.Names, new SelectList(Model.Names), new { style = "display:block;" })
+
+@Html.LabelFor(m => m.Names, new { })
+@Html.DropDownListFor(m => m.Names, new SelectList(Model.Names), new { style = "display:block;" })
+
+<!-- display lists from objects in the viewmodel-->
+@Html.LabelFor(m => m.Students, new { })
+@Html.DropDownListFor(m => m.Names, new MultiSelectList(Model.Students, "StudentID", "Email"), new { style = "display:block;" })
+
+
+@Html.ActionLink("Let's go see Students", "Students")
+
+
